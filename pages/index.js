@@ -1,11 +1,27 @@
-import Link from "next/link"
+import React from 'react';
+import Link from "../src/components/Link";
+
+function Title({ children, as }) {
+    const Tag = as;
+    return (
+        <React.Fragment>
+            <Tag>{ children }</Tag>
+
+            <style jsx>{`
+                ${Tag} {
+                    color: red;
+                }
+                `}</style>
+        </React.Fragment>
+    )
+}
 
 export default function HomePage() {
     return(
         <div>
-            <h1>Home page</h1>
+            <Title as="h1">Home page</Title>
             <Link href="/faq">
-                <p>ir para faq</p>
+                ir para a pagina doFaq
             </Link>
         </div>
     )
